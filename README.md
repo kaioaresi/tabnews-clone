@@ -36,3 +36,8 @@ npm install react-dom@18.2.0
 - UDP - User datagram protocol
 - IP - Internet protocol
 
+---
+
+# References
+
+- [HTML5 Games - UDP vs TCP](https://www.youtube.com/watch?v=ZEEBsq3eQmg)
