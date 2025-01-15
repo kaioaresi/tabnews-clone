@@ -41,3 +41,4 @@ npm install react-dom@18.2.0
 # References
 
 - [HTML5 Games - UDP vs TCP](https://www.youtube.com/watch?v=ZEEBsq3eQmg)
+- [Por dentro do GIT | #devadev com Jonathan Lima](https://www.youtube.com/watch?v=H2j7e81J798)
