@@ -1,6 +1,5 @@
 # tabnews-clone
 
-
 ## Installs
 
 Init project
@@ -27,6 +26,12 @@ Install react-dom
 npm install react-dom@18.2.0
 ```
 
+Install prettier
+
+```bash
+npm install prettier -D
+```
+
 ## Protocols
 
 - HTTP - Hypertext transfer protocol
@@ -35,7 +40,6 @@ npm install react-dom@18.2.0
 - TCP - Transmission control protocol
 - UDP - User datagram protocol
 - IP - Internet protocol
-
 
 ## CI na vercel
 
