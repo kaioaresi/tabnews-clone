@@ -273,6 +273,46 @@ Os gTLDs (Generic Top-Level Domains) são um dos principais tipos de domínios d
 
 Em resumo, o "error budget" ajuda a quantificar e controlar o risco de indisponibilidade, auxiliando as equipes a tomarem decisões mais informadas sobre onde alocar esforços de desenvolvimento, seja em novas funcionalidades ou na confiabilidade do sistema.
 
+## Modelo MVC
+
+O MVC é um padrão de arquitetura de software. O MVC sugere uma maneira para você pensar na divisão de responsabilidades, principalmente dentro de um software web.
+
+O princípio básico do MVC é a divisão da aplicação em três camadas: a camada de interação do usuário (view), a camada de manipulação dos dados (model) e a camada de controle (controller).
+
+Com o MVC, é possível separar o código relativo à interface do usuário das regras de negócio, o que sem dúvida traz muitas vantagens que veremos mais à frente.
+
+Quando falamos sobre o MVC, cada uma das camadas apresenta geralmente as seguintes responsabilidades:
+
+- Model A responsabilidade dos models é representar o negócio. Também é responsável pelo acesso e manipulação dos dados na sua aplicação.
+
+- View A view é responsável pela interface que será apresentada, mostrando as informações do model para o usuário.
+
+- Controller É a camada de controle, responsável por ligar o model e a view, fazendo com que os models possam ser repassados para as views e vice-versa.
+
+![alt mvc](https://dkrn4sk0rn31v.cloudfront.net/uploads/2020/06/diagramaMVC.png)
+
+## POC e MVP
+
+Um Proof of Concept (POC) é uma demonstração para verificar se uma ideia pode se tornar realidade, focando na sua viabilidade. Um Minimum Viable Product (MVP) é um produto com funcionalidades mínimas para atrair os primeiros clientes e validar a ideia no mercado.
+
+**POC (Prova de Conceito):**
+
+- O objetivo principal é testar a viabilidade da ideia, ou seja, se ela pode ser realizada e atende aos requisitos.
+- Não busca demanda de mercado, mas sim praticidade.
+- Ajuda a identificar problemas técnicos e logísticos.
+- Geralmente precede o desenvolvimento completo do produto.
+- Serve para convencer stakeholders sobre o potencial da ideia.
+
+**MVP (Produto Mínimo Viável):**
+
+- O objetivo principal é validar a ideia no mercado com o mínimo esforço.
+- Busca atrair os primeiros clientes com funcionalidades básicas.
+- Visa aprender o que ressoa com o mercado e coletar feedback dos usuários.
+- É um produto funcional, que permite aos clientes completarem tarefas.
+- Ajuda a minimizar tempo e recursos gastos em produtos que podem não ter sucesso.
+
+Em resumo: O POC testa a viabilidade da ideia, enquanto o MVP testa o produto no mercado. O POC geralmente ocorre antes do MVP. Um POC bem-sucedido leva a um MVP.
+
 ---
 
 # References
