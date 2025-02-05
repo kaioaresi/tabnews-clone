@@ -1,7 +1,7 @@
 function Home() {
   return (
     <h1>
-      Fala meu povo, passando aqui só para dizer que ferias é bom de mais.
+      Pagina em construção, trabalhando em ideias para construção e planeamento desse projeto.
     </h1>
   );
 }

@@ -256,6 +256,23 @@ Os gTLDs (Generic Top-Level Domains) são um dos principais tipos de domínios d
 2. [Centralized Zone Data Service](https://czds.icann.org/en) - Serviço que fornece dados sobre domínios de nível superior, incluindo gTLDs, gerido pela ICANN.
    Os gTLDs proporcionam oportunidades variadas para registro de domínios, permitindo que empresas e indivíduos adotem nomes que melhor representam suas identidades, missões ou serviços na web, sem amarras geográficas.
 
+## Conceitos SRE
+
+- **SLA (Service-Level Agreement):** É um acordo com os usuários do seu serviço que garante que o SLO de disponibilidade será atendido dentro de um certo período. Se o SLO não for atingido, geralmente há uma penalidade, como reembolso parcial ou tempo de assinatura adicional. O SLA é um contrato, geralmente com clientes pagantes, que define o nível de serviço que eles podem esperar e as consequências se esse nível não for atingido
+- **SLI (Service-Level Indicator):** É uma medida direta do comportamento de um serviço, como a frequência de sondagens bem-sucedidas do seu sistema. É usado para avaliar se um sistema está operando dentro do SLO. Em termos simples, é uma métrica que indica o quão bem seu serviço está funcionando.
+- **SLO (Service-Level Objective):** É uma meta numérica para a disponibilidade do sistema. Define o nível de confiabilidade que um sistema deve atingir. O SLO serve como base para discussões sobre a confiabilidade do sistema e para decisões sobre mudanças de design. Essencialmente, é a meta de desempenho que você estabelece para seu serviço.
+
+### Error budget
+
+- O "error budget" representa a quantidade de indisponibilidade que um sistema pode tolerar dentro de um determinado período, sem violar o SLO (Service Level Objective) definido.
+- O SLO estabelece a meta de disponibilidade do sistema, enquanto o "error budget" é o complemento dessa meta, representando o limite de erros ou tempo de inatividade aceitável.
+- Por exemplo, se um SLO define uma disponibilidade de 99,9%, o "error budget" seria de 0,1%, representando a margem de indisponibilidade permitida.
+- O "error budget" serve como uma ferramenta para tomar decisões estratégicas sobre o equilíbrio entre confiabilidade e velocidade no desenvolvimento de um sistema.
+- Se um sistema está operando muito abaixo do limite do "error budget", pode ser mais apropriado priorizar o desenvolvimento de novas funcionalidades ou experimentos com a infraestrutura, pois há margem para riscos.
+- Por outro lado, se o sistema está perto de consumir todo o "error budget", a prioridade deve ser a melhoria da confiabilidade e estabilidade para evitar a violação do SLO.
+
+Em resumo, o "error budget" ajuda a quantificar e controlar o risco de indisponibilidade, auxiliando as equipes a tomarem decisões mais informadas sobre onde alocar esforços de desenvolvimento, seja em novas funcionalidades ou na confiabilidade do sistema.
+
 ---
 
 # References
