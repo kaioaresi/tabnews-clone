@@ -336,3 +336,4 @@ Em resumo: O POC testa a viabilidade da ideia, enquanto o MVP testa o produto no
 - [vercel](https://vercel.com/)
 - [Root server](https://root-servers.org/)
 - [iana cc-TLD](https://www.iana.org/domains/root/db)
+- [Curso javascript](https://www.youtube.com/playlist?list=PLHz_AreHm4dlsK3Nr9GVvXCbpQyHQl1o1)

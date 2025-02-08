@@ -1,16 +1,17 @@
-// Teste passando uma func jeito comum
-test("test normal", funcTest1);
+const calculadora = require("../models/calculadora.js");
 
-function funcTest1 () {
-    expect(1).toBe(1);
-}
-
-// Agora com func anonima
-test("test anonimo", function (){
-    expect(2).toBe(2);
+test("Soma: check basic", () => {
+    const result = calculadora.somar(2,2);
+    expect(result).toBe(4);
 });
 
-// Agora de um jeito mistico
-test("test mistico",  () => {
-    expect(3).toBe(3);
+
+test("Soma: valida string number1", () => {
+    const result = calculadora.somar("teste",1);
+    expect(result).toBe("Error");
+});
+
+test("Soma: valida string number2", () => {
+    const result = calculadora.somar(5,"1");
+    expect(result).toBe("Error");
 });
