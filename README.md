@@ -32,6 +32,20 @@ Install prettier
 npm install prettier -D
 ```
 
+## Tests
+
+Instalando test runner `jest`
+
+```bash
+npm install --save-dev jest@29.6.2
+```
+
+Para rodar
+
+```bash
+npm run test
+```
+
 ## Protocols
 
 - HTTP - Hypertext transfer protocol
