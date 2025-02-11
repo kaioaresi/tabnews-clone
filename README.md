@@ -327,6 +327,33 @@ Um Proof of Concept (POC) é uma demonstração para verificar se uma ideia pode
 
 Em resumo: O POC testa a viabilidade da ideia, enquanto o MVP testa o produto no mercado. O POC geralmente ocorre antes do MVP. Um POC bem-sucedido leva a um MVP.
 
+
+## Curl
+
+Request simples, com ela conseguimos visualizar o que é enviado para o servidor e o que ele retorna
+
+
+```bash
+curl localhost:3000 --verbose
+```
+
+Agora entender um pouco mais sobre headers, realizando uma request para o IP da vercel e informando o host para identificar nosso site hospedado
+
+Aqui vamos obter apenas um redirect pois, não foi informado o host
+
+```bash
+curl https://76.76.21.21 --insecure -v
+```
+
+Uso Prático
+
+Este tipo de comando é útil em situações onde você precisa testar configurações específicas do servidor web sem usar um navegador tradicionalmente (por exemplo, em ambientes de desenvolvimento local ou durante depurações). Além disso, pode ser utilizado para verificar comportamentos específicos do servidor sob diferentes condições (como respostas baseadas no cabeçalho "Host").
+
+```bash
+curl https://76.76.21.21 --insecure -v --header 'Host: curso.dev'
+```
+
+
 ---
 
 # References
