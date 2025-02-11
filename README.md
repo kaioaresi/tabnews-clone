@@ -353,6 +353,125 @@ Este tipo de comando é útil em situações onde você precisa testar configura
 curl https://76.76.21.21 --insecure -v --header 'Host: curso.dev'
 ```
 
+## URI Path Versioning
+
+**URI Path Versioning** é uma estratégia amplamente utilizada para versionar APIs, onde o número da versão é incluído diretamente no caminho da URL. Isso torna a versão explícita e fácil de entender, facilitando a gestão de mudanças sem afetar clientes existentes.
+
+### Características e Exemplos
+
+- **Implementação Simples**: Incluir a versão no path é direto e intuitivo. Por exemplo:
+  ```http
+  GET /api/v1/users
+  GET /api/v2/users
+  ```
+
+- **Vantagens**:
+  - Fácil de implementar e entender.
+  - Versões são claras e explícitas.
+  
+- **Desvantagens**:
+  - Alterações na estrutura do URI podem afetar o cache.
+  - Pode levar à duplicação de recursos se não for bem gerenciado[1][3].
+
+### Considerações RESTful
+
+Embora seja uma prática comum, alguns argumentam que o versionamento por URI não segue os princípios RESTful, pois recursos em REST não têm conceito de "versões". Alternativas como headers personalizados ou negociação de conteúdo são consideradas mais alinhadas com os princípios REST[4][5].
+
+### Comparação com Outras Estratégias
+
+| Método | Descrição | Exemplo |
+|--------|-----------|---------|
+| **URI Path Versioning** | Versão incluída no caminho do URI. | `GET /api/v1/users` |
+| **Query Parameter Versioning** | Versão passada como parâmetro na URL. | `GET /api/users?version=1` |
+| **Custom Request Headers** | Versão especificada em um cabeçalho personalizado. | `X-API-Version: v1` |
+
+Cada método tem suas vantagens e desvantagens, dependendo das necessidades específicas da API[2][3].
+
+## Header versioning
+
+**Header Versioning** é uma estratégia de versionamento de APIs que utiliza cabeçalhos HTTP para especificar a versão desejada da API. Essa abordagem é considerada mais alinhada com os princípios RESTful, pois mantém o URI focado no recurso em si, sem incluir informações de versão.
+
+### Características e Exemplos
+
+- **Implementação**: Clientes podem especificar a versão desejada usando um cabeçalho personalizado. Por exemplo:
+  ```http
+  GET /api/users HTTP/1.1
+  Host: example.com
+  X-API-Version: v1
+  ```
+
+- **Vantagens**:
+  - Preserva os URIs entre diferentes versões.
+  - Adere aos princípios RESTful.
+  
+- **Desvantagens**:
+  - Menos intuitivo do que o versionamento por URI.
+  - Requer mais esforço para inspecionar as requisições, pois a versão está oculta nos cabeçalhos.
+
+### Comparação com Outras Estratégias
+
+| Método | Descrição | Exemplo |
+|--------|-----------|---------|
+| **URI Path Versioning** | Versão incluída no caminho do URI. | `GET /api/v1/users` |
+| **Query Parameter Versioning** | Versão passada como parâmetro na URL. | `GET /api/users?version=1` |
+| **Custom Request Headers (Header Versioning)** | Versão especificada em um cabeçalho personalizado. | `X-API-Version: v1` |
+
+### Implementação Prática
+
+Para implementar o header versioning, você pode usar bibliotecas ou frameworks que suportam essa funcionalidade, como ASP.NET Core ou Amazon API Gateway[2][4][5]. Além disso, ao usar esse método, é importante configurar corretamente os caches para lidarem com diferentes versões dos recursos[2].
+
+### Caches e Vary Header
+
+Ao utilizar header versioning, é crucial incluir o cabeçalho `Vary` nas respostas para garantir que proxies e caches sejam instruídos a armazenarem respostas diferentemente dependendo da versão solicitada:
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/vnd.example.v1+json
+Vary: Accept-Encoding, ExampleAPI-Version
+```
+
+Isso ajuda a evitar problemas de cache quando múltiplas versões são usadas simultaneamente[2].
+
+## URI path versioning X header versioning
+
+Quando se trata de versionamento de APIs, duas abordagens comuns são o **URI Path Versioning** e o **Header Versioning**. Cada uma tem suas vantagens e desvantagens, dependendo das necessidades específicas do projeto.
+
+### URI Path Versioning
+
+Nesta abordagem, a versão da API é incluída diretamente no caminho da URL. Por exemplo:
+
+```http
+https://example.com/api/v1/users
+https://example.com/api/v2/users
+```
+
+**Vantagens:**
+- Fácil de implementar e entender.
+- Versões são claras e explícitas.
+  
+**Desvantagens:**
+- Pode poluir os URIs.
+- Alterações na estrutura do URI podem afetar o cache.
+
+### Header Versioning
+
+Aqui, a versão é especificada em um cabeçalho HTTP personalizado. Por exemplo:
+
+```http
+GET /api/users HTTP/1.1
+Host: example.com
+X-API-Version: 1
+```
+
+**Vantagens:**
+- Mantém os URIs limpos e fáceis de ler.
+- Oferece flexibilidade ao não depender da estrutura do URI.
+
+**Desvantagens:**
+- Requer mudanças no código cliente para incluir o cabeçalho customizado.
+- Pode ser mais difícil debugar ou lidar com caches/proxies.
+
+Em resumo, se você prioriza simplicidade e visibilidade das versões, o **URI Path Versioning** pode ser mais adequado. No entanto, se prefere manter os URIs limpos e ter flexibilidade na gestão das versões sem alterar a estrutura dos endpoints, então o **Header Versioning** é uma escolha melhor.
 
 ---
 
@@ -364,3 +483,11 @@ curl https://76.76.21.21 --insecure -v --header 'Host: curso.dev'
 - [Root server](https://root-servers.org/)
 - [iana cc-TLD](https://www.iana.org/domains/root/db)
 - [Curso javascript](https://www.youtube.com/playlist?list=PLHz_AreHm4dlsK3Nr9GVvXCbpQyHQl1o1)
+- [aspnet-api-versioning](https://github.com/dotnet/aspnet-api-versioning/issues/902)
+- [Get-started-with-API-versioning-and-URIs](https://www.techtarget.com/searchapparchitecture/tip/Get-started-with-API-versioning-and-URIs)
+- [Versioning-by-Header](https://github.com/dotnet/aspnet-api-versioning/wiki/Versioning-by-Header)
+- [header-versioning](https://apibestpractices.info/versioning/header-versioning)
+- [rest-api-versioning-best-practices](https://codedamn.com/news/backend/rest-api-versioning-best-practices)
+- [api-versioning-url-vs-header-vs-media-type-versioning](https://www.lonti.com/blog/api-versioning-url-vs-header-vs-media-type-versioning)
+- [how-to-manage-api-versioning-a-technical-guide](https://cyclr.com/blog/how-to-manage-api-versioning-a-technical-guide)
+- [api-versioning-best-practices-for-managing-change-in-apis-1dgg](https://dev.to/getambassador2024/api-versioning-best-practices-for-managing-change-in-apis-1dgg)
