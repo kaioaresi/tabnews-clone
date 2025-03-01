@@ -499,3 +499,4 @@ Nesse [link](https://docs.github.com/pt/authentication/keeping-your-account-and-
 - [api-versioning-url-vs-header-vs-media-type-versioning](https://www.lonti.com/blog/api-versioning-url-vs-header-vs-media-type-versioning)
 - [how-to-manage-api-versioning-a-technical-guide](https://cyclr.com/blog/how-to-manage-api-versioning-a-technical-guide)
 - [api-versioning-best-practices-for-managing-change-in-apis-1dgg](https://dev.to/getambassador2024/api-versioning-best-practices-for-managing-change-in-apis-1dgg)
+- [jsconfig](https://code.visualstudio.com/docs/languages/jsconfig)
