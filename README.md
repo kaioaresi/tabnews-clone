@@ -473,6 +473,14 @@ X-API-Version: 1
 
 Em resumo, se você prioriza simplicidade e visibilidade das versões, o **URI Path Versioning** pode ser mais adequado. No entanto, se prefere manter os URIs limpos e ter flexibilidade na gestão das versões sem alterar a estrutura dos endpoints, então o **Header Versioning** é uma escolha melhor.
 
+## Git tips
+
+### Remover dados sensíveis
+
+Existe situações, onde pode acontecer de subir algum dados sensível para o repositorio, sendo assim temos algumas maneiras de tratar esse tipo de situação.
+
+Nesse [link](https://docs.github.com/pt/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository), é documentados algumas formas de realizar esse clean up de dados sensíveis.
+
 ---
 
 # References
