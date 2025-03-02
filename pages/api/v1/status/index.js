@@ -12,12 +12,8 @@ async function status(request, response) {
     const dbMaxConnections = dbMaxConnectionsQuery.rows[0].max_connections;
 
     // current connections
-    // const dbCurrentConnections = await database.query('SELECT count(*) FROM pg_stat_activity;');
-    // const dbCurrentConnections = await database.query('SELECT count(distinct(numbackends)) FROM pg_stat_database;');
-    const dbCurrentConnections = await database.query("SELECT count(*) FROM pg_stat_activity WHERE state = 'active';");
+    const dbCurrentConnections = await database.query("select count(*)::int from pg_stat_activity WHERE datname = 'db_tab' AND state = 'active';");
     const dbConnection = dbCurrentConnections.rows[0].count;
-
-    console.log(dbConnection);
 
     response.status(200).json({
         update_at: updateAt,
@@ -25,7 +21,7 @@ async function status(request, response) {
             database: {
                 version: dbVersionParse,
                 max_connections: parseInt(dbMaxConnections),
-                connections: parseInt(dbConnection),
+                connections: dbConnection,
             },
         },
     });
