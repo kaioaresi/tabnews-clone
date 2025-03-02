@@ -9,7 +9,11 @@ test("Get to /api/v1/status should return 200", async () => {
     expect(responseBody.update_at).toEqual(parsedUpdateAt);
 
     // check db version
-    const dbVersion = responseBody.db_info.version;
-    expect(dbVersion).toBe(16);
+    const dbVersion = responseBody.dependecies.database.version;
+    expect(dbVersion).toEqual("16.0");
+
+    // check max_connections
+    const dbMaxConnections = responseBody.dependecies.database.max_connections;
+    expect(dbMaxConnections).toBe(100);
 
 });
