@@ -500,3 +500,5 @@ Nesse [link](https://docs.github.com/pt/authentication/keeping-your-account-and-
 - [how-to-manage-api-versioning-a-technical-guide](https://cyclr.com/blog/how-to-manage-api-versioning-a-technical-guide)
 - [api-versioning-best-practices-for-managing-change-in-apis-1dgg](https://dev.to/getambassador2024/api-versioning-best-practices-for-managing-change-in-apis-1dgg)
 - [jsconfig](https://code.visualstudio.com/docs/languages/jsconfig)
+- [PostgresSQL sslmod](https://www.postgresql.org/docs/current/libpq-ssl.html)
+- [Lib pg js](https://node-postgres.com/features/ssl)
