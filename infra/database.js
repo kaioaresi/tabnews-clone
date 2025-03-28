@@ -7,9 +7,7 @@ async function query (queryObject) {
         user: process.env.POSTGRES_USER,
         password: process.env.POSTGRES_PASSWORD,
         database: process.env.POSTGRES_DB,
-        ssl: process.env.NODE_ENV === 'development' ? false : {
-            sslmode: 'require',
-        },
+        ssl: getSSLValues(),
     });
     
     try {
@@ -27,4 +25,15 @@ async function query (queryObject) {
 
 export default {
     query: query,
+};
+
+function getSSLValues() {
+    if (process.env.POSTGRES_CA) {
+        return {
+            ca: process.env.POSTGRES_CA,
+        };
+    }
+    return process.env.NODE_ENV === 'development' ? false : {
+        sslmode: 'require',
+    };
 };
