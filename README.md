@@ -481,6 +481,27 @@ Existe situações, onde pode acontecer de subir algum dados sensível para o re
 
 Nesse [link](https://docs.github.com/pt/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository), é documentados algumas formas de realizar esse clean up de dados sensíveis.
 
+## Migrations
+
+Em projetos reais, a estrutura de dados evolui constantemente com a implementação de novos recursos. Isso implica a adição ou remoção de entidades e propriedades, exigindo que os `schema` (estrutura) de banco de dados sejam adaptados para manter a sincronia com o aplicativo.
+
+Os scripts de migração são ferramentas essenciais nesse contexto. Eles permitem gerenciar as alterações na estrutura do banco de dados de forma sistemática, consistente e reprodutível. Através desses scripts, é possível criar, modificar ou remover elementos como tabelas, colunas, índices e chaves, garantindo que essas mudanças sejam aplicadas de maneira uniforme em diferentes ambientes, como desenvolvimento, teste e produção.
+
+```mermaid
+graph TD
+    A[Início] --> B(Banco de Dados Original)
+    B -->|"Aplica Migration 1 (ex: Adicionar coluna 'email')"| C(Banco de Dados Atualizado - Versão 1)
+    C -->|"Aplica Migration 2 (ex: Criar tabela 'utilizadores')"| D(Banco de Dados Atualizado - Versão 2)
+    D -->|"Aplica Migration 3 (ex: Remover coluna 'telefone')"| E(Banco de Dados Atualizado - Versão 3)
+    E --> F[Fim]
+    style A fill:#90EE90,stroke:#333,stroke-width:2px
+    style B fill:#87CEFA,stroke:#333,stroke-width:2px
+    style C fill:#87CEFA,stroke:#333,stroke-width:2px
+    style D fill:#87CEFA,stroke:#333,stroke-width:2px
+    style E fill:#87CEFA,stroke:#333,stroke-width:2px
+    style F fill:#90EE90,stroke:#333,stroke-width:2px
+```
+
 ---
 
 # References
@@ -502,3 +523,4 @@ Nesse [link](https://docs.github.com/pt/authentication/keeping-your-account-and-
 - [jsconfig](https://code.visualstudio.com/docs/languages/jsconfig)
 - [PostgresSQL sslmod](https://www.postgresql.org/docs/current/libpq-ssl.html)
 - [Lib pg js](https://node-postgres.com/features/ssl)
+- [Visão geral das migrações](https://learn.microsoft.com/pt-br/ef/core/managing-schemas/migrations/?tabs=dotnet-core-cli)
