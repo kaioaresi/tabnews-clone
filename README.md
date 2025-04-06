@@ -524,3 +524,5 @@ graph TD
 - [PostgresSQL sslmod](https://www.postgresql.org/docs/current/libpq-ssl.html)
 - [Lib pg js](https://node-postgres.com/features/ssl)
 - [Visão geral das migrações](https://learn.microsoft.com/pt-br/ef/core/managing-schemas/migrations/?tabs=dotnet-core-cli)
+- [Doc. pg-migrations](https://salsita.github.io/node-pg-migrate/api)
+
