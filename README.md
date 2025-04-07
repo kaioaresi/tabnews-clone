@@ -525,4 +525,7 @@ graph TD
 - [Lib pg js](https://node-postgres.com/features/ssl)
 - [Visão geral das migrações](https://learn.microsoft.com/pt-br/ef/core/managing-schemas/migrations/?tabs=dotnet-core-cli)
 - [Doc. pg-migrations](https://salsita.github.io/node-pg-migrate/api)
-
+- [database rollbacks pitfalls](https://octopus.com/blog/database-rollbacks-pitfalls)
+- [stack overflow how we do deployment 2016 edition](https://nickcraver.com/blog/2016/05/03/stack-overflow-how-we-do-deployment-2016-edition/)
+- [against database teardown](https://calpaterson.com/against-database-teardown.html)
+- [The argument against clearing the database between tests (2020)](https://news.ycombinator.com/item?id=29764792)
