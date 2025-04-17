@@ -529,3 +529,5 @@ graph TD
 - [stack overflow how we do deployment 2016 edition](https://nickcraver.com/blog/2016/05/03/stack-overflow-how-we-do-deployment-2016-edition/)
 - [against database teardown](https://calpaterson.com/against-database-teardown.html)
 - [The argument against clearing the database between tests (2020)](https://news.ycombinator.com/item?id=29764792)
+- [Setting up Jest with Next.js](https://nextjs.org/docs/app/building-your-application/testing/jest)
+- [moduledirectories-arraystring](https://jestjs.io/docs/next/configuration#moduledirectories-arraystring)
