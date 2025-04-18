@@ -531,3 +531,5 @@ graph TD
 - [The argument against clearing the database between tests (2020)](https://news.ycombinator.com/item?id=29764792)
 - [Setting up Jest with Next.js](https://nextjs.org/docs/app/building-your-application/testing/jest)
 - [moduledirectories-arraystring](https://jestjs.io/docs/next/configuration#moduledirectories-arraystring)
+- [load-dotenv-file-jest](https://jaketrent.com/post/load-dotenv-file-jest/)
+- [npmjs](https://www.npmjs.com/package/dotenv)
