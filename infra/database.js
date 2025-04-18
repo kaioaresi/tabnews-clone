@@ -33,7 +33,5 @@ function getSSLValues() {
             ca: process.env.POSTGRES_CA,
         };
     }
-    return process.env.NODE_ENV === 'development' ? false : {
-        sslmode: 'require',
-    };
+    return process.env.NODE_ENV === 'production' ? true : false;
 };
