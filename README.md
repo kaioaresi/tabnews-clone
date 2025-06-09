@@ -327,7 +327,6 @@ Um Proof of Concept (POC) é uma demonstração para verificar se uma ideia pode
 
 Em resumo: O POC testa a viabilidade da ideia, enquanto o MVP testa o produto no mercado. O POC geralmente ocorre antes do MVP. Um POC bem-sucedido leva a um MVP.
 
-
 ## Curl
 
 Request simples, com ela conseguimos visualizar o que é enviado para o servidor e o que ele retorna
